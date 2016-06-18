@@ -7,6 +7,8 @@ use Illuminate\Support\Collection;
  * Class GroupedCollection
  *
  * Collection that will support adding values with grouped index (collection indexed by groupKey)
+ * 
+ * @method Collection|null get($key, $default = null) in most use-cases returns a collection
  *
  * @package Pion\Support
  */
