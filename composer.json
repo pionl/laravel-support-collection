@@ -1,0 +1,19 @@
+{
+    "name": "pion/laravel-support-collection",
+    "description": "The support classes for the Laravels collection",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Martin Kluska",
+            "email": "martin.kluska@imakers.cz"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Pion\\Support\\Collection\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "5.*"
+    }
+}
