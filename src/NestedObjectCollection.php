@@ -4,15 +4,18 @@ namespace Pion\Support\Collection;
 use Illuminate\Support\Collection;
 
 /**
- * Class NestedCollection
+ * Class NestedObjectCollection
  *
  * Creates a nested collection from flat collection to child nested collection based on parent property and id property.
  *
  * All childs are stored to childs property in the object. Can be empty.
  *
+ * @method array toArray()
+ * @method boolean isEmpty()
+ *
  * @package App\Classes
  */
-class NestedCollection
+class NestedObjectCollection
 {
     /**
      * @var static
@@ -49,7 +52,7 @@ class NestedCollection
     protected $propertyForChildren;
 
     /**
-     * NestedCollection constructor.
+     * NestedObjectCollection constructor.
      *
      * Groups the items by the parent property and loops from the top of tree (null property or different value) and
      * adds childs to the object.
@@ -125,4 +128,18 @@ class NestedCollection
 
         return $this;
     }
+
+    /**
+     * Passes the function into the collection
+     *
+     * @param string $name
+     * @param array $arguments
+     *
+     * @return mixed
+     */
+    public function __call($name, $arguments)
+    {
+        return call_user_func_array([$this->getCollection(), $name], $arguments);
+    }
+
 }
