@@ -23,7 +23,7 @@ class GroupedCollection extends Collection
      *
      * @return $this
      */
-    public function add($groupKey, $value, $key = null)
+    public function addToGroup($groupKey, $value, $key = null)
     {
         // get the group, if the group is not created
         // null will be returned
