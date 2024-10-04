@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
  * Class GroupedCollection
  *
  * Collection that will support adding values with grouped index (collection indexed by groupKey)
- * 
+ *
  * @method Collection|null get($key, $default = null) in most use-cases returns a collection
  *
  * @package Pion\Support
@@ -17,11 +17,11 @@ class GroupedCollection extends Collection
     /**
      * Adds the grouped collection
      *
-     * @param string $groupKey
+     * @param string|int $groupKey
      * @param mixed $value
-     * @param string|null $key
+     * @param string|int|null $key
      *
-     * @return $this
+     * @return static
      */
     public function addToGroup($groupKey, $value, $key = null)
     {
