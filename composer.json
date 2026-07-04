@@ -13,7 +13,19 @@
             "Pion\\Support\\Collection\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Pion\\Support\\Collection\\Tests\\": "tests/"
+        }
+    },
     "require": {
-        "illuminate/support": "^6 || ^7 || ^8 || ^9"
+        "php": "^8.0",
+        "illuminate/support": "^9.0 || ^10.0 || ^11.0 || ^12.0 || ^13.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.6 || ^10.5 || ^11.0"
+    },
+    "scripts": {
+        "test": "phpunit"
     }
 }
