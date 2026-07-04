@@ -107,5 +107,28 @@ This will result in a collection of items with a collection object. If you expor
       }
     }
 
-    
+## Testing
 
+Run the full support matrix and get a pass/fail table:
+
+```bash
+bin/test-matrix.sh
+```
+
+Run the PHPUnit suite in Docker for each supported PHP runtime:
+
+```bash
+docker compose run --rm php82 composer test
+docker compose run --rm php83 composer test
+docker compose run --rm php85 composer test
+```
+
+Resolve and test a specific Laravel support line inside Docker:
+
+```bash
+docker compose run --rm php82 bin/test-target.sh '^9.0'
+docker compose run --rm php82 bin/test-target.sh '^10.0'
+docker compose run --rm php83 bin/test-target.sh '^11.0'
+docker compose run --rm php83 bin/test-target.sh '^12.0'
+docker compose run --rm php85 bin/test-target.sh '^13.0'
+```
